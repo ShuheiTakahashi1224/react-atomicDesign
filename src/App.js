@@ -1,4 +1,5 @@
-import { SearchInput, UserCard } from "./components/index";
+import { BrowserRouter } from "react-router-dom";
+import { DefaultLayout, SearchInput, UserCard } from "./components/index";
 import "./styles.css";
 
 export default function App() {
@@ -12,9 +13,11 @@ export default function App() {
     website: "https://google.com"
   };
   return (
-    <div className="App">
-      <SearchInput />
-      <UserCard user={user} />
-    </div>
+    <BrowserRouter>
+      <DefaultLayout>
+        <SearchInput />
+        <UserCard user={user} />
+      </DefaultLayout>
+    </BrowserRouter>
   );
 }
