@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styled from "styled-components";
 import { Input, PrimaryButton } from "../index";
 
@@ -9,7 +10,8 @@ const StyledContainer = styled.div`
   align-items: center;
 `;
 
-const SearchInput = () => {
+const SearchInput = memo(() => {
+  console.log("searchinput");
   return (
     <StyledContainer>
       <Input placeholder={"検索条件を入力"} />
@@ -18,6 +20,6 @@ const SearchInput = () => {
       </StyledButtonWrapper>
     </StyledContainer>
   );
-};
+});
 
 export default SearchInput;

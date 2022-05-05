@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { memo } from "react";
 import { Card, UserIconWithName } from "../index";
 
 const SDl = styled.dl`
@@ -19,7 +20,8 @@ const SDescriptionDetail = styled.dd`
   overflow-wrap: break-word;
 `;
 
-const UserCard = (props) => {
+const UserCard = memo((props) => {
+  console.log("usercard");
   const { user } = props;
   return (
     <Card>
@@ -40,6 +42,6 @@ const UserCard = (props) => {
       </SDl>
     </Card>
   );
-};
+});
 
 export default UserCard;

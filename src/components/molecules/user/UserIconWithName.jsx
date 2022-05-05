@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { useContext } from "react";
+import { memo } from "react";
 import { Icon } from "../../index";
-import { UserContext } from "../../../providers/UserProvider";
+import { useRecoilValue } from "recoil";
+import { userState } from "../../../store/userState";
 
 const SImageWrapper = styled.div`
   width: 160px;
@@ -21,9 +22,10 @@ const SEdit = styled.span`
   text-decoration: underline;
 `;
 
-const UserIconWithName = (props) => {
+const UserIconWithName = memo((props) => {
   const { name, image } = props;
-  const { userInfo } = useContext(UserContext);
+  // const { userInfo } = useContext(UserContext);
+  const userInfo = useRecoilValue(userState);
   const isAdmin = userInfo ? userInfo.isAdmin : false;
 
   return (
@@ -35,6 +37,6 @@ const UserIconWithName = (props) => {
       {isAdmin && <SEdit>編集</SEdit>}
     </>
   );
-};
+});
 
 export default UserIconWithName;
