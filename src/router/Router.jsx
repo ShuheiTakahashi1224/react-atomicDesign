@@ -1,5 +1,5 @@
 import { Switch } from "react-router-dom";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Top from "../components/pages/Top";
 import Users from "../components/pages/Users";
 import { DefaultLayout, HeaderOnly } from "../components/index";
